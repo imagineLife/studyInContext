@@ -4,7 +4,7 @@ import LoginPage from './Components/LoginPage';
 import MainPage from './Components/MainPage';
 import './main.css';
 
-class Root extends React.Component {
+export default class Root extends React.Component {
   state = {
     currentUser: null
   };
@@ -18,6 +18,8 @@ class Root extends React.Component {
   };
 
   render() {
+    console.log('made it here :) ')
+    
     return this.state.currentUser ? (
       <MainPage
         currentUser={this.state.currentUser}
@@ -28,3 +30,5 @@ class Root extends React.Component {
     );
   }
 }
+
+ReactDOM.render(<Root />, document.getElementById('app'));
