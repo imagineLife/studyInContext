@@ -1,0 +1,13 @@
+/* Header styles */
+.Header {
+  border-bottom: 1px solid #9eb2fb;
+}
+.Header h2 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 20px;
+  color: #44b;
+}
+.UserAvatar {
+  border-radius: 50%;
+}
