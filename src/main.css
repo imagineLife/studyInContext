@@ -1,3 +1,74 @@
-body{
-	line-height: 2;
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'IBM Plex Sans';
+  font-size: 18px;
+  line-height: 1.3em;
+}
+input,
+button {
+  font-family: 'IBM Plex Sans';
+  font-size: 18px;
+}
+
+/* App Layout */
+main {
+  display: grid;
+  height: 100vh;
+  grid-template-areas:
+    'Header Header'
+    'MessageList MessageList';
+  grid-template-rows: 49px;
+  grid-template-columns: 250px;
+}
+.Header {
+  grid-area: Header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+.MessageList {
+  grid-area: MessageList;
+}
+.MessageView {
+  grid-area: MessageView;
+}
+
+/* Message List styles */
+.MessageList {
+  padding: 10px;
+}
+.MessageList .no-messages {
+  text-align: center;
+  color: #999;
+  margin-top: 40px;
+}
+
+/* Menu Styles */
+.UserMenu {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.UserMenu ul {
+  font-size: 16px;
+  list-style: none;
+  position: absolute;
+  top: 35px;
+  right: 5px;
+  margin: 0;
+  padding: 5px 0;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+.UserMenu li {
+  cursor: pointer;
+  display: block;
+  padding: 3px 20px;
+}
+.UserMenu li:hover {
+  background-color: #e3eafd;
 }
