@@ -36,7 +36,7 @@ export default class Root extends React.Component {
         {this.state.currentUser ? (
           <MainPage />
         ) : (
-          <LoginPage onLogin={this.handleLogin} />
+          <LoginPage />
         )}
       </UserContext.Provider>
     );
