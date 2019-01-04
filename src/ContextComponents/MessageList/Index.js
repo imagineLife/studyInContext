@@ -1,4 +1,5 @@
 import React from 'react';
+import UserContext from '../../UserContext';
 
 const MessageList = ({ currentUser }) => (
   <div className="MessageList">
