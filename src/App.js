@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import LoginPage from './Components/LoginPage';
 import MainPage from './Components/MainPage';
 import './main.css';
+import UserContext from './UserContext'
 
 export default class Root extends React.Component {
   state = {
