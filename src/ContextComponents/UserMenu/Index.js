@@ -32,20 +32,24 @@ class UserMenu extends React.Component {
 
   render() {
     return (
-      <div className="UserMenu">
-        <img
-          className="UserAvatar"
-          alt="User avatar"
-          src={this.props.currentUser.avatar}
-          onClick={this.toggleMenu}
-          ref={this.avatarRef}
-        />
-        {this.state.menuVisible && (
-          <ul>
-            <li onClick={this.props.onLogout}>Logout</li>
-          </ul>
-        )}
-      </div>
+      <UserContext.Consumer>
+      {contextValue => (
+        <div className="UserMenu">
+          <img
+            className="UserAvatar"
+            alt="User avatar"
+            src={contextValue.avatar}
+            onClick={this.toggleMenu}
+            ref={this.avatarRef}
+          />
+          {this.state.menuVisible && (
+            <ul>
+              <li onClick={this.props.onLogout}>Logout</li>
+            </ul>
+          )}
+        </div>
+      )}
+      </UserContext.Consumer>
     );
   }
 }
