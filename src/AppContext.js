@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LoginPage from './Components/LoginPage';
-import MainPage from './Components/MainPage';
+import LoginPage from './ContextComponents/LoginPage';
+import MainPage from './ContextComponents/MainPage';
 import './main.css';
 import UserContext from './UserContext'
 
