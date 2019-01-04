@@ -6,6 +6,12 @@ import './main.css';
 import UserContext from './UserContext'
 
 export default class Root extends React.Component {
+  constructor(props){
+    super(props)
+    this.handleLogin = this.handleLogin.bind(this)
+    this.state = {}
+  }
+  
   state = {
     currentUser: null
   };
@@ -19,20 +25,20 @@ export default class Root extends React.Component {
   };
 
   render() {
-    console.log('made it here :) ')
-
-    let contextObj = {
-      user: this.state.currentUser,
-      // onLogin: this.handleLogin,
-      onLogout: this.handleLogout
-    }
-    
-    return this.state.currentUser ? (
-      <UserContext.Provider value={contextObj}>
-        <MainPage />
+    return (
+      <UserContext.Provider
+        value={{
+          user: this.state.currentUser,
+          onLogin: this.handleLogin,
+          onLogout: this.handleLogout
+        }}
+      >
+        {this.state.currentUser ? (
+          <MainPage />
+        ) : (
+          <LoginPage onLogin={this.handleLogin} />
+        )}
       </UserContext.Provider>
-    ) : (
-      <LoginPage onLogin={this.handleLogin} />
     );
   }
 }
