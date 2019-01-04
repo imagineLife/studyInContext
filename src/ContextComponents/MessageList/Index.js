@@ -3,10 +3,10 @@ import UserContext from '../../UserContext';
 
 const MessageList = () => (
 	<UserContext.Consumer> 
-		{contextValue => (
+		{({user}) => (
 			<div className="MessageList">
 			    <div className="no-messages">
-			      Your mailbox is empty, {contextValue.firstName}! 🎉
+			      Your mailbox is empty, {user.firstName}! 🎉
 			    </div>
 			</div>
 		)}  

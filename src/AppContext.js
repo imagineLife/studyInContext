@@ -20,9 +20,15 @@ export default class Root extends React.Component {
 
   render() {
     console.log('made it here :) ')
+
+    let contextObj = {
+      user: this.state.currentUser,
+      // onLogin: this.handleLogin,
+      // onLogout: this.handleLogout
+    }
     
     return this.state.currentUser ? (
-      <UserContext.Provider value={this.state.currentUser}>
+      <UserContext.Provider value={contextObj}>
         <MainPage
           onLogout={this.handleLogout}
         />

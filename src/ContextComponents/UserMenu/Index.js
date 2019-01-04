@@ -33,12 +33,12 @@ class UserMenu extends React.Component {
   render() {
     return (
       <UserContext.Consumer>
-      {contextValue => (
+      {({user}) => (
         <div className="UserMenu">
           <img
             className="UserAvatar"
             alt="User avatar"
-            src={contextValue.avatar}
+            src={user.avatar}
             onClick={this.toggleMenu}
             ref={this.avatarRef}
           />
