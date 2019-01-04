@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import LoginPage from './Components/LoginPage';
 import MainPage from './Components/MainPage';
 import './main.css';
+import UserContext from './UserContext'
 
 export default class Root extends React.Component {
   state = {
@@ -21,10 +22,12 @@ export default class Root extends React.Component {
     console.log('made it here :) ')
     
     return this.state.currentUser ? (
-      <MainPage
-        currentUser={this.state.currentUser}
-        onLogout={this.handleLogout}
-      />
+      <UserContext.Provider>
+        <MainPage
+          currentUser={this.state.currentUser}
+          onLogout={this.handleLogout}
+        />
+      </UserContext.Provider>
     ) : (
       <LoginPage onLogin={this.handleLogin} />
     );
