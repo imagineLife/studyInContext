@@ -24,14 +24,12 @@ export default class Root extends React.Component {
     let contextObj = {
       user: this.state.currentUser,
       // onLogin: this.handleLogin,
-      // onLogout: this.handleLogout
+      onLogout: this.handleLogout
     }
     
     return this.state.currentUser ? (
       <UserContext.Provider value={contextObj}>
-        <MainPage
-          onLogout={this.handleLogout}
-        />
+        <MainPage />
       </UserContext.Provider>
     ) : (
       <LoginPage onLogin={this.handleLogin} />
