@@ -22,7 +22,7 @@ export default class Root extends React.Component {
     console.log('made it here :) ')
     
     return this.state.currentUser ? (
-      <UserContext.Provider>
+      <UserContext.Provider value={this.state.currentUser}>
         <MainPage
           currentUser={this.state.currentUser}
           onLogout={this.handleLogout}

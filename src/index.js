@@ -1,2 +1,2 @@
-import App from "./App";
+import AppContext from "./AppContext";
 import style from "./main.css";
