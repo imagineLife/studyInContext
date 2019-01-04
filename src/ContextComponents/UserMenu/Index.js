@@ -1,4 +1,5 @@
 import React from 'react';
+import UserContext from '../../UserContext';
 
 class UserMenu extends React.Component {
   state = {
