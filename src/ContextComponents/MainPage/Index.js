@@ -4,8 +4,8 @@ import MessageList from '../MessageList';
 
 const MainPage = ({ currentUser, onLogout }) => (
   <main>
-    <Header currentUser={currentUser} onLogout={onLogout} />
-    <MessageList currentUser={currentUser} />
+    <Header onLogout={onLogout} />
+    <MessageList />
   </main>
 );
 
