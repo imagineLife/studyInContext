@@ -95,3 +95,15 @@ Example: a parent that passes a prop to a child, to a nested child, to a nested 
 	Now, the data does not get passed through many child components,
 		rather stored in context in parent and consumed in nested child.
 
+
+
+
+/*
+*
+*
+*
+*	Context Can Pass an OBJECT 
+*
+*
+*
+*/
