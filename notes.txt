@@ -1,0 +1,97 @@
+CONTEXT:
+	can replace passing values through props to nested components
+
+	FROM something like...
+	<Parent>
+		state={stateValue}
+		<ChildOne childProp={state.stateValue}>
+			<ChildTwo child2Prop={props.childProp}>
+				<FinalComponent>
+					{props.child2Prop}
+				</FinalComponent>
+			</ChildTwo>
+		</ChildOne>
+	</Parent> 
+
+	TO something like...
+	<Parent>
+		<Context.Provider value={stateValue}>
+			<ChildOne >
+				<ChildTwo>
+					<FinalComponent>
+						<Context.Consumer>
+						{(passedVal) => (
+							{passedVal}
+						)}
+						</Context.Consumer>
+					</FinalComponent>
+				</ChildTwo>
+			</ChildOne>
+		</Context.Provider>
+	</Parent> 
+
+/*
+*
+*
+*
+*	Converting a Class component to use Context
+*
+*
+*
+*/
+
+Example: a parent that passes a prop to a child, to a nested child, to a nested child etc. 
+
+1. Create a context file
+	const Context = React.createContext()
+	//creates context.consumer, context.provider
+
+2. Import context into parent class
+
+3. In parent class component, wrap the returned data in context.provider
+	render(){
+		return(
+			<Context.Provider>
+				<main>
+					this.state.someData
+				</main>
+			</Context.Provider>
+		)
+	}
+
+4.add a VALUE to the context that will get 'passed' to child components.
+	This VALUE is the value that will be REMOVED from being passed from parent to child to child
+
+	render(){
+		return(
+			<Context.Provider>
+			{(this.state.stateData) => {
+				<main>
+					...component filler
+				</main>
+			}}
+			
+			</Context.Provider>
+		)
+	}
+
+5.setup the child that USES the 'state' data
+
+	5a.Import the Context into component
+		import Context from './Context'
+
+	5b. Wrap the child component in the Context Consumer
+	return(
+		<Context.Consumer>
+			{(consumerVal) => {
+				<div>
+					{consumerVal}
+				</div>
+			}}
+		</Context.Consumer>
+	)
+
+6. remove the formerly passed prop from all components.
+	Now, the data does not get passed through many child components,
+		rather stored in context in parent and consumed in nested child.
+
