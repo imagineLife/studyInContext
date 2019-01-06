@@ -12,13 +12,12 @@ button {
   font-size: 18px;
 }
 
-/* App Layout */
 main {
   display: grid;
   height: 100vh;
   grid-template-areas:
     'Header Header'
-    'MessageList MessageList';
+    'MessageArea MessageArea';
   grid-template-rows: 49px;
   grid-template-columns: 250px;
 }
@@ -30,45 +29,29 @@ main {
   padding: 10px;
 }
 .MessageList {
-  grid-area: MessageList;
+  grid-area: MessageArea;
 }
-.MessageView {
-  grid-area: MessageView;
+.MessageViewer {
+  grid-area: MessageArea;
 }
 
-/* Message List styles */
-.MessageList {
+
+
+/* Message View */
+.MessageViewer {
   padding: 10px;
 }
-.MessageList .no-messages {
-  text-align: center;
-  color: #999;
-  margin-top: 40px;
+.MessageViewer h2 {
+  font-size: 1.3em;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #ccc;
 }
-
-/* Menu Styles */
-.userMenu {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-.userMenu ul {
-  font-size: 16px;
-  list-style: none;
-  position: absolute;
-  top: 35px;
-  right: 5px;
-  margin: 0;
-  padding: 5px 0;
-  background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-.userMenu li {
+.MessageViewer button {
+  background: none;
+  border: none;
   cursor: pointer;
-  display: block;
-  padding: 3px 20px;
-}
-.userMenu li:hover {
-  background-color: #e3eafd;
+  color: #1a1ae8;
+  text-decoration: underline;
+  float: right;
+  font-size: 15px;
 }
