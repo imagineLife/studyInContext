@@ -43,6 +43,13 @@ class EmailProvider extends React.Component{
 	}
 
 	render(){
-		return()
+		return(
+			<EmailProvider value={
+				...this.state,
+				onSelectEmail: handleEmailSelection
+			}>
+				{this.props.children}
+			</EmailProvider>
+		)
 	}
 }
