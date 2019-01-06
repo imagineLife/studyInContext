@@ -34,9 +34,9 @@ class UserMenu extends React.Component {
     return (
       <UserConsumer>
       {({user, onLogout}) => (
-        <div className="UserMenu">
+        <div className="userMenu">
           <img
-            className="UserAvatar"
+            className="userAvatar"
             alt="User avatar"
             src={user.avatar}
             onClick={this.toggleMenu}
