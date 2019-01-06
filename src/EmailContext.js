@@ -53,3 +53,5 @@ class EmailProvider extends React.Component{
 		)
 	}
 }
+
+export { EmailProvider, Consumer as EmailConsumer }
