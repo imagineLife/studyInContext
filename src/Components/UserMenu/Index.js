@@ -31,9 +31,9 @@ class UserMenu extends React.Component {
 
   render() {
     return (
-      <div className="UserMenu">
+      <div className="userMenu">
         <img
-          className="UserAvatar"
+          className="userAvatar"
           alt="User avatar"
           src={this.props.currentUser.avatar}
           onClick={this.toggleMenu}
