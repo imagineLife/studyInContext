@@ -7,7 +7,7 @@ const MessageList = () => (
 	<UserConsumer> 
 		{({user}) => (
 			<EmailConsumer>
-				{({emails}) => (
+				{({emails, onSelectEmail}) => (
 					<div className="messageList">
 					    {emails.length === 0 ?
 					    	<div className="no-messages">
@@ -16,7 +16,7 @@ const MessageList = () => (
 						    : <ul>
 						    	{emails.map(email => (
 						    		<Email key={email.id} 
-						    		onClick={() => console.log(email)}
+						    		onClick={() => onSelectEmail(email)}
 						    		email={email} />
 						    	))}
 						    </ul>
