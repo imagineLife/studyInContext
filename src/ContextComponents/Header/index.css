@@ -8,6 +8,8 @@
   font-size: 20px;
   color: #44b;
 }
-.UserAvatar {
+.userAvatar {
   border-radius: 50%;
+  width: 40px;
+  height: 40px;
 }
