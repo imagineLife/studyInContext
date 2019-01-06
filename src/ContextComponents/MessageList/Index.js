@@ -1,13 +1,14 @@
 import React from 'react';
 import { UserConsumer } from '../../UserContext';
 import { EmailConsumer } from '../../EmailContext';
+import './index.css'
 
 const MessageList = () => (
 	<UserConsumer> 
 		{({user}) => (
 			<EmailConsumer>
 				{({emails}) => (
-					<div className="MessageList">
+					<div className="messageList">
 					    {emails.length === 0 ?
 					    	<div className="no-messages">
 						      Your mailbox is empty, {user.firstName}! 🎉
@@ -15,7 +16,7 @@ const MessageList = () => (
 						    : <ul>
 						    	{emails.map(email => (
 						    		<Email key={email.id} 
-						    		onClick={() => onSelectEmail(email)}
+						    		onClick={() => console.log(email)}
 						    		email={email} />
 						    	))}
 						    </ul>
