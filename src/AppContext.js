@@ -4,22 +4,25 @@ import LoginPage from './ContextComponents/LoginPage';
 import MainPage from './ContextComponents/MainPage';
 import './main.css';
 import {UserProvider, UserConsumer} from './UserContext'
-import {EmailProvider, EmailConsumer} from './EmailContext'
+import { EmailProvider } from './EmailContext'
 
 export default function Root(){
   return (
-    <UserProvider>
-      <UserConsumer>
-        {({user}) =>
-        user ? (
-          <MainPage />
-        ) : (
-          <LoginPage />
-        )}
-      </UserConsumer>
-    </UserProvider>
+    
+        <UserConsumer>
+          {({user}) =>
+          user ? (
+            <MainPage />
+          ) : (
+            <LoginPage />
+          )}
+        </UserConsumer>
   );
 }
 
 
-ReactDOM.render(<Root />, document.getElementById('app'));
+ReactDOM.render(
+  <UserProvider>
+    <Root />
+  </UserProvider>, 
+  document.getElementById('app'));
