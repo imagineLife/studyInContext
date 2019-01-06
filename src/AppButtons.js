@@ -3,17 +3,24 @@ import ReactDOM from 'react-dom';
 import './appButton.css';
 
 //create colorContext
-const ColorContext = React.createContext();
+
+
+const ColorContext = React.createContext('black');
 
 //Consumes ColorContext
 const FancyButton = props => (
   <ColorContext.Consumer>
     {contextVal => {
+
+      //if fancyButtonn is OUTSIDE of a context provider
+      //  AND there is no default context in React.createContext()
+      //  Then throw an error
       if (typeof contextVal === 'undefined') {
         throw Error(
           'FancyButton requires a Color Provider'
         );
       }
+      
       return (
         <button className={`fancy-btn ${contextVal}`} {...props}>
           Click Me
@@ -25,8 +32,10 @@ const FancyButton = props => (
 
 const App = () => (
   <div>
+
+    <FancyButton />
     <ColorContext.Provider value="red">
-      <FancyButton />
+      
       <FancyButton />
     </ColorContext.Provider>
     <ColorContext.Provider value="green">
@@ -47,8 +56,11 @@ NOTES
 const App = () => (
   <div>
 
-    //Fancy button OUTSIDE of a context Provider will NOT render,
+    
+    When there 
+    Fancy button OUTSIDE of a context Provider will NOT render,
       throws error
+
     <FancyButton />
 
 
