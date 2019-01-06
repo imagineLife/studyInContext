@@ -37,6 +37,11 @@ class EmailProvider extends React.Component{
 		})
 
 	}
+
+	handleEmailSelection = (selectedEmail) => {
+		this.setState({currentEmail: selectedEmail})
+	}
+
 	render(){
 		return()
 	}
