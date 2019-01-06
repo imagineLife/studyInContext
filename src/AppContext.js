@@ -23,6 +23,8 @@ export default function Root(){
 
 ReactDOM.render(
   <UserProvider>
-    <Root />
+    <EmailProvider>
+      <Root />
+    </EmailProvider>
   </UserProvider>, 
   document.getElementById('app'));
