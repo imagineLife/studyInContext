@@ -27,3 +27,10 @@ class NotificationContext extends React.Component{
 		)
 	}
 }
+
+const Notification = ({message, onClose}) => (
+	<li>
+		{message.text}
+		<button className='close closeButton' onClick={onClose}>&times;</button>
+	</li>
+)
