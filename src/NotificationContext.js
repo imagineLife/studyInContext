@@ -9,12 +9,14 @@ class NotificationContext extends React.Component{
 
 	addMessage = text => {
 		this.setState(prevState => ({
-			...prevState.messages,
-			{
+			messages: [
+			  ...prevState.messages,
+			  {
 				id: Math.random(),
 				text,
 				addedAt: new Date().getTime()
-			}
+			  }
+			]
 		}))
 	}
 
