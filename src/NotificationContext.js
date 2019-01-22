@@ -7,6 +7,23 @@ class NotificationContext extends React.Component{
 		messages: []
 	}
 
+	addMessage = text => {
+		this.setState(prevState => ({
+			...prevState.messages,
+			{
+				id: Math.random(),
+				text,
+				addedAt: new Date().getTime()
+			}
+		}))
+	}
+
+	removeMessage = msg => {
+		this.setState(prevState => ({
+			messages: prevState.messages.filter(m => m.id !== msg.id)
+		}))
+	}
+
 	render(){
 		return(
 		 <Provider value={{
