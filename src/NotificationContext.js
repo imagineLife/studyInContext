@@ -51,3 +51,5 @@ const Notification = ({message, onClose}) => (
 		<button className='close closeButton' onClick={onClose}>&times;</button>
 	</li>
 )
+
+export { Provider, Consumer as Notifier }
