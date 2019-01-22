@@ -5,7 +5,7 @@ import MainPage from './ContextComponents/MainPage';
 import './main.css';
 import {UserProvider, UserConsumer} from './UserContext'
 import { EmailProvider } from './EmailContext'
-
+import { NotificationProvider } from './NotificationContext'
 export default function Root(){
   return (
     
@@ -22,9 +22,11 @@ export default function Root(){
 
 
 ReactDOM.render(
-  <UserProvider>
-    <EmailProvider>
-      <Root />
-    </EmailProvider>
-  </UserProvider>, 
+  <NotificationProvider>
+    <UserProvider>
+      <EmailProvider>
+        <Root />
+      </EmailProvider>
+    </UserProvider>
+  </NotificationProvider>, 
   document.getElementById('app'));
