@@ -9,7 +9,10 @@ class NotificationContext extends React.Component{
 
 	render(){
 		return(
-		 <Provider>
+		 <Provider value={{
+		 	...this.state,
+		 	notify: this.addMessage
+		 }}>
 		 	<div className='notification-wrapper'>
 		 		<ul>
 		 			{this.state.messages.map(m => (
