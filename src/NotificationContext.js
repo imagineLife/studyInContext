@@ -52,4 +52,16 @@ const Notification = ({message, onClose}) => (
 	</li>
 )
 
-export { Provider, Consumer as Notifier }
+function withNotifier(Component){
+	return function Notified(props){
+		return(
+		  <Consumer>
+		    {({ notify})  => (
+		    	<Component {...props} notify={notify} />
+		    )}
+		  </Consumer>
+		)
+	}
+}
+
+export { Provider, Consumer as Notifier, withNotifier }
