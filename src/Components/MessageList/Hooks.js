@@ -1,20 +1,18 @@
 import React from 'react';
-import { UserConsumer } from '../../UserContext'
+import {UserContext} from '../../UserContextHooks'
 import { EmailConsumer } from '../../EmailContext'
 
+const MessageList = () => {
+	
+	const UserData = React.useContext(UserContext)
 
-const MessageList = () => (
-  <UserContext>
-  	{ ({user}) => (
-  		<EmailConsumer>
-			<div className="MessageList">
-				<div className="no-messages">
-					Your mailbox is empty, {user.firstName}! 🎉
-				</div>
+	return(
+		<div className="MessageList">
+			<div className="no-messages">
+				Your mailbox is empty, {UserData.firstName}! 🎉
 			</div>
-		</EmailConsumer>
-  	)}
-  </UserContext>
-);
+		</div>
+	)
+};
 
 export default MessageList;
