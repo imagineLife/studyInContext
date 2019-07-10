@@ -1,52 +1,39 @@
 import React from 'react';
 
-class UserMenu extends React.Component {
-  state = {
-    menuVisible: false
-  };
+function UserMenu(props){
+  const [menuVisible, setMenuVisible] = React.useState(false)
 
-  avatarRef = React.createRef();
+  const avatarRef = React.createRef();
 
-  componentDidMount() {
-    document.addEventListener('click', this.hideMenu);
-  }
 
-  componentWillUnmount() {
-    document.removeEventListener('click', this.hideMenu);
-  }
-
-  hideMenu = e => {
+  const hideMenu = e => {
     // Ignore clicks on the avatar
     // so that the menu can open
-    if (e.target !== this.avatarRef.current) {
-      this.setState({ menuVisible: false });
+    if (e.target !== avatarRef.current) {
+      setMenuVisible(false)
     }
   };
 
-  toggleMenu = () => {
-    this.setState(state => ({
-      menuVisible: !state.menuVisible
-    }));
+  const toggleMenu = () => {
+    setMenuVisible(!menuVisible)
   };
-
-  render() {
-    return (
-      <div className="userMenu">
-        <img
-          className="userAvatar"
-          alt="User avatar"
-          src={this.props.currentUser.avatar}
-          onClick={this.toggleMenu}
-          ref={this.avatarRef}
-        />
-        {this.state.menuVisible && (
-          <ul>
-            <li onClick={this.props.onLogout}>Logout</li>
-          </ul>
-        )}
-      </div>
-    );
-  }
+  
+  return (
+    <div className="userMenu">
+      <img
+        className="userAvatar"
+        alt="User avatar"
+        src={props.currentUser.avatar}
+        onClick={() => toggleMenu()}
+        ref={avatarRef}
+      />
+      {menuVisible && (
+        <ul>
+          <li onClick={props.onLogout}>Logout</li>
+        </ul>
+      )}
+    </div>
+  );
 }
 
 export default UserMenu;
