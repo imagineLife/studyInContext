@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../Header';
-import MessageList from '../MessageList';
+import Header from '../Header/Hooks';
+import MessageList from '../MessageList/Hooks';
 
 const MainPage = ({ currentUser, onLogout }) => {
 	console.log('currentUser')
