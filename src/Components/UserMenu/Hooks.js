@@ -1,6 +1,11 @@
 import React from 'react';
 
+import { UserContext } from '../../UserContextHooks'
+
 function UserMenu(props){
+
+  const { avatar } = React.useContext(UserContext);
+
   const [menuVisible, setMenuVisible] = React.useState(false)
 
   const avatarRef = React.createRef();
@@ -23,7 +28,7 @@ function UserMenu(props){
       <img
         className="userAvatar"
         alt="User avatar"
-        src={props.currentUser.avatar}
+        src={avatar}
         onClick={() => toggleMenu()}
         ref={avatarRef}
       />
