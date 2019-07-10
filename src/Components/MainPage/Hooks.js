@@ -5,7 +5,7 @@ import MessageList from '../MessageList/Hooks';
 const MainPage = ({ currentUser, onLogout }) => {
 	return(
 	  <main className="myMain">
-	    <Header currentUser={currentUser} onLogout={onLogout} />
+	    <Header onLogout={onLogout} />
 	    <MessageList currentUser={currentUser} />
 	  </main>
 	)

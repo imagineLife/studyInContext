@@ -4,7 +4,7 @@ import UserMenu from '../UserMenu/Hooks';
 const Header = ({ currentUser, onLogout }) => (
   <header className="Header">
     <h2>MyMail</h2>
-    <UserMenu currentUser={currentUser} onLogout={onLogout} />
+    <UserMenu onLogout={onLogout} />
   </header>
 );
 
