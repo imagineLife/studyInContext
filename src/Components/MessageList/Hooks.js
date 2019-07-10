@@ -4,12 +4,12 @@ import { EmailConsumer } from '../../EmailContext'
 
 const MessageList = () => {
 	
-	const UserData = React.useContext(UserContext)
+	const {firstName, lastName} = React.useContext(UserContext)
 
 	return(
 		<div className="MessageList">
 			<div className="no-messages">
-				Your mailbox is empty, {UserData.firstName}! 🎉
+				Your mailbox is empty, {firstName} {lastName}! 🎉
 			</div>
 		</div>
 	)
