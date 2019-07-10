@@ -17,18 +17,12 @@ function LoginPage(props){
   let [username, setUsername] = React.useState('')
   let [password, setPassword] = React.useState('')
 
-  const handleInputChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
-
   const handleSubmit = e => {
     e.preventDefault();
     setLoading(true);
     setError(null);
 
-    login(this.state.username, this.state.password)
+    login(username, password)
       .then(user => {
         setLoading(false)
         props.onLogin(user);
