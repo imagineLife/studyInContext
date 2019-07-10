@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LoginPage from './Components/LoginPage';
-import MainPage from './Components/MainPage';
+import LoginPage from './Components/LoginPage/Hooks';
+import MainPage from './Components/MainPage/Hooks';
 import './main.css';
 
 export default function Root(){
