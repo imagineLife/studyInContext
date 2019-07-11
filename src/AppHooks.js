@@ -1,21 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LoginPage from './Components/LoginPage/Hooks';
-import MainPage from './Components/MainPage/Hooks';
+import AppConsumer from './AppConsumer'
 import {UserContext, UserProvider, UserConsumer} from './UserContextHooks'
 import './main.css';
 
 export default function Root(){
-  
-    
-  //if logged-in, app about current user
   return(
     <UserProvider>
-      <UserConsumer>
-        { ( {currentUser} ) =>  
-           currentUser ? (<MainPage/>) : (<LoginPage />)
-        }
-      </UserConsumer>
+      <AppConsumer />
     </UserProvider>
   )
 }
