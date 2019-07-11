@@ -28,7 +28,6 @@ export default function Root(){
       avatar: currentUser.avatar
     }}>
       <MainPage
-        currentUser={currentUser}
         onLogout={handleLogout}
       />
     </UserContext.Provider>
