@@ -2,10 +2,10 @@ import React from 'react';
 
 import { UserContext } from '../../UserContextHooks'
 
-function UserMenu(props){
+function UserMenu(){
 
-  const { avatar } = React.useContext(UserContext);
-
+  const { avatar, handleLogout } = React.useContext(UserContext);
+  
   const [menuVisible, setMenuVisible] = React.useState(false)
 
   const avatarRef = React.createRef();
@@ -34,7 +34,7 @@ function UserMenu(props){
       />
       {menuVisible && (
         <ul>
-          <li onClick={props.onLogout}>Logout</li>
+          <li onClick={handleLogout}>Logout</li>
         </ul>
       )}
     </div>
