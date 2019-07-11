@@ -25,11 +25,10 @@ export default function Root(){
     <UserContext.Provider value={{
       firstName: currentUser.firstName,
       lastName: currentUser.lastName,
-      avatar: currentUser.avatar
+      avatar: currentUser.avatar,
+      handleLogout
     }}>
-      <MainPage
-        onLogout={handleLogout}
-      />
+      <MainPage />
     </UserContext.Provider>
 
   //if not logged-in
