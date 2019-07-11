@@ -9,7 +9,6 @@ export default function Root(){
   
   let [currentUser, setCurrentUser] = React.useState(null)
   
-  
   const handleLogin = user => {
     console.log('handleLogin USER => ')
     console.log(user)
@@ -26,14 +25,17 @@ export default function Root(){
       firstName: currentUser.firstName,
       lastName: currentUser.lastName,
       avatar: currentUser.avatar,
-      handleLogout
+      handleLogout,
+      handleLogin
     }}>
-      <MainPage />
+      <MainPage/>
     </UserContext.Provider>
 
   //if not logged-in
   ) : (
-    <LoginPage onLogin={handleLogin} />
+    <UserContext.Provider value={handleLogin}>
+      <LoginPage />
+    </UserContext.Provider>  
   );
 }
 
