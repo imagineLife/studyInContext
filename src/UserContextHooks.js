@@ -8,8 +8,6 @@ const UserProvider = (props) => {
 	let [currentUser, setCurrentUser] = React.useState(null)
 	  
 	const handleLogin = user => {
-	    console.log('handleLogin USER => ')
-	    console.log(user)
 	    setCurrentUser(user);
 	};
 
