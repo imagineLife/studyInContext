@@ -5,7 +5,7 @@ import { UserContext } from '../../UserContextHooks'
 
 function LoginPage(){
 
-  let handleLogin = React.useContext(UserContext)
+  let {handleLogin} = React.useContext(UserContext)
   let [error, setError] = React.useState(null)
   let [loading, setLoading] = React.useState(false)
   let [username, setUsername] = React.useState('')
