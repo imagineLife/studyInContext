@@ -6,6 +6,7 @@ import {UserContext} from './UserContextHooks'
 import './main.css';
 
 export default function Root(){
+  
   let [currentUser, setCurrentUser] = React.useState(null)
   
   
@@ -21,7 +22,11 @@ export default function Root(){
     
   //if logged-in, app about current user
   return currentUser ? (
-    <UserContext.Provider value={currentUser}>
+    <UserContext.Provider value={{
+      firstName: currentUser.firstName,
+      lastName: currentUser.lastName,
+      avatar: currentUser.avatar
+    }}>
       <MainPage
         currentUser={currentUser}
         onLogout={handleLogout}
