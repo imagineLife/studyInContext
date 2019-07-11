@@ -18,10 +18,6 @@ function LoginPage(){
 
     login(username, password)
       .then(user => {
-
-        console.log('user HERE')
-        console.log(user)
-        
         setLoading(false)
         handleLogin(user);
       })
