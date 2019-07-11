@@ -4,11 +4,28 @@ const UserContext = React.createContext();
 const {Provider, Consumer} = UserContext
 
 const UserProvider = (props) => {
-	return(<Provider>
+
+	let [currentUser, setCurrentUser] = React.useState(null)
+	  
+	const handleLogin = user => {
+	    console.log('handleLogin USER => ')
+	    console.log(user)
+	    setCurrentUser(user);
+	};
+
+	const handleLogout = () => {
+	    setCurrentUser(null);
+	};
+
+	return(<Provider value={{
+	  currentUser,
+      handleLogout,
+      handleLogin
+    }}>
 		{props.children}
 	</Provider>)
 }
 
 // export default Provider;
-export {Provider as UserProvider, Consumer as UserConsumer, UserContext}
+export {UserProvider, Consumer as UserConsumer, UserContext}
 //Contains Context.Consumer, Context.Provider
