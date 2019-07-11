@@ -6,7 +6,9 @@ import MainPage from './Components/MainPage/Hooks';
 const AppConsumer = () => (
 	<UserConsumer>
 	  { ( {currentUser} ) =>  
-	   currentUser ? (<MainPage/>) : (<LoginPage />)
+	   currentUser ? 
+	   	 (<MainPage/>) 
+	   : (<LoginPage />)
 	  }
 	</UserConsumer>
 )
