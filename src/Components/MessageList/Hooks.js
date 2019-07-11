@@ -4,7 +4,7 @@ import { EmailConsumer } from '../../EmailContext'
 
 const MessageList = () => {
 	
-	const {firstName, lastName} = React.useContext(UserContext)
+	const { currentUser : { firstName, lastName }} = React.useContext(UserContext)
 
 	return(
 		<div className="MessageList">
