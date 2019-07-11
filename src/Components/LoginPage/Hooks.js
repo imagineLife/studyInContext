@@ -1,18 +1,11 @@
 import React from 'react';
 import { login } from '../../api/';
 import './index.css';
-import UserContext from '../../UserContextHooks'
+import { UserContext } from '../../UserContextHooks'
 
-function LoginPage(props){
-  /*
-    state = {
-      error: null,
-      loading: false,
-      username: '',
-      password: ''
-    };
-  */ 
+function LoginPage(){
 
+  let handleLogin = React.useContext(UserContext)
   let [error, setError] = React.useState(null)
   let [loading, setLoading] = React.useState(false)
   let [username, setUsername] = React.useState('')
@@ -30,7 +23,7 @@ function LoginPage(props){
         console.log(user)
         
         setLoading(false)
-        props.onLogin(user);
+        handleLogin(user);
       })
       .catch(error => {
         setLoading(false)
