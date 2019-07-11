@@ -4,7 +4,7 @@ import { UserContext } from '../../UserContextHooks'
 
 function UserMenu(){
 
-  const { avatar, handleLogout } = React.useContext(UserContext);
+  const { currentUser: { avatar }, handleLogout } = React.useContext(UserContext);
   
   const [menuVisible, setMenuVisible] = React.useState(false)
 
