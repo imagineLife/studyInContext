@@ -25,6 +25,10 @@ function LoginPage(props){
 
     login(username, password)
       .then(user => {
+
+        console.log('user HERE')
+        console.log(user)
+        
         setLoading(false)
         props.onLogin(user);
       })
