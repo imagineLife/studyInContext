@@ -1,6 +1,7 @@
 import React from 'react';
 import {UserContext} from '../../ContextHooks/User'
 import { EmailContext } from '../../ContextHooks/Email'
+import Email from '../SingleEmail'
 
 const MessageList = () => {
 	
@@ -20,7 +21,10 @@ const MessageList = () => {
 			{/* If emails */}
 			<ul>
 				{emails.map(msg => 
-				<li key={msg.id}>{msg.subject}</li>
+				<Email  
+				  key={msg.id}
+				  email={msg}
+				  onClick={() => selectThisEmail(msg)}/>
 				)}	
 			</ul>
 		</div>
