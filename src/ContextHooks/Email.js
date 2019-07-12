@@ -40,6 +40,4 @@ const EmailProvider = (props) => {
 	</Provider>)
 }
 
-// export default Provider;
 export {EmailProvider, Consumer as EmailConsumer, EmailContext}
-//Contains Context.Consumer, Context.Provider
