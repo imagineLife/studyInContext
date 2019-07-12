@@ -26,7 +26,13 @@ const EmailProvider = (props) => {
 
 	}, [])
 
-	return(<Provider>
+	return(<Provider value={{
+		emails, 
+		currentEmail, 
+		setCurrentEmail, 
+		err, 
+		loading
+	}}>
 		{props.children}
 	</Provider>)
 }
