@@ -9,9 +9,20 @@ const MessageList = () => {
 	
 	return(
 		<div className="MessageList">
-			<div className="no-messages">
+			{/* If No Emails */}
+			{!emails || (emails && emails.length === 0) && <div className="no-messages">
 				Your mailbox is empty, {firstName} {lastName}! 🎉
-			</div>
+			</div>}
+
+			{/* If Loading*/}
+			{loading && <div className="no-messages">Loading...</div>}
+
+			{/* If emails */}
+			<ul>
+				{emails.map(msg => 
+				<li key={msg.id}>{msg.subject}</li>
+				)}	
+			</ul>
 		</div>
 	)
 };
