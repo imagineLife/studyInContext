@@ -1,4 +1,5 @@
 import React from 'react';
+import { fetchEmails } from '../api/'
 
 const EmailContext = React.createContext(); 
 const {Provider, Consumer} = EmailContext
@@ -11,10 +12,12 @@ const EmailProvider = (props) => {
 	let [ loading, setLoading ] = React.useState(false)
 
 	Reaect.useEffect(() => {
-		console.log('EmailProvider "CDM" mock');
-		
+		console.log('EmailProvider "CDM" mock, fetch emails here...');
+		setLoading(true)
+
+
 	}, [])
-	
+
 	return(<Provider>
 		{props.children}
 	</Provider>)
