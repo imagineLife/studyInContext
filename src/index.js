@@ -1,5 +1,5 @@
 // import App from "./App";
-import AppHooks from "./AppHooks";
+import AppProvider from "./App/HooksProvider";
 // import App from "./AppContext";
 // import AppContext from "./AppContext";
 // import AppButtons from "./AppButtons";
