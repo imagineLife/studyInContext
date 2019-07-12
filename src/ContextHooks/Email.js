@@ -11,7 +11,7 @@ const EmailProvider = (props) => {
 	let [ err, setErr ] = React.useState(null)
 	let [ loading, setLoading ] = React.useState(false)
 
-	Reaect.useEffect(() => {
+	React.useEffect(() => {
 		console.log('EmailProvider "CDM" mock, fetch emails here...');
 		setLoading(true)
 		fetchEmails()
@@ -26,12 +26,15 @@ const EmailProvider = (props) => {
 
 	}, [])
 
+	const selectThisEmail = email => setCurrentEmail(email)
+
 	return(<Provider value={{
 		emails, 
 		currentEmail, 
 		setCurrentEmail, 
 		err, 
-		loading
+		loading,
+		selectThisEmail
 	}}>
 		{props.children}
 	</Provider>)
