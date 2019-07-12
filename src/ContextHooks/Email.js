@@ -14,7 +14,15 @@ const EmailProvider = (props) => {
 	Reaect.useEffect(() => {
 		console.log('EmailProvider "CDM" mock, fetch emails here...');
 		setLoading(true)
-
+		fetchEmails()
+		.then(res => {
+			setEmails(res)
+			setLoading(false)
+		})
+		.catch(err => {
+			setLoading(false)
+			setErr(err)
+		})
 
 	}, [])
 
