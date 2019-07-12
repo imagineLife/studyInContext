@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppConsumer from './HooksConsumer'
-import {UserContext, UserProvider, UserConsumer} from '../ContextHooks/User'
+import { UserProvider } from '../ContextHooks/User'
+import { EmailProvider } from '../ContextHooks/Email'
 import '../main.css';
 
 export default function Root(){
   return(
     <UserProvider>
-      <AppConsumer />
-    </UserProvider>
+      <EmailProvider>
+        <AppConsumer />
+      </EmailProvider>
+      </UserProvider>
   )
 }
 
