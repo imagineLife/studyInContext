@@ -10,6 +10,11 @@ const EmailProvider = (props) => {
 	let [ err, setErr ] = React.useState(null)
 	let [ loading, setLoading ] = React.useState(false)
 
+	Reaect.useEffect(() => {
+		console.log('EmailProvider "CDM" mock');
+		
+	}, [])
+	
 	return(<Provider>
 		{props.children}
 	</Provider>)
