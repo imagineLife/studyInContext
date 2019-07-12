@@ -1,5 +1,5 @@
 import React from 'react';
-import {UserContext} from '../../UserContextHooks'
+import {UserContext} from '../../ContextHooks/User'
 import { EmailConsumer } from '../../EmailContext'
 
 const MessageList = () => {

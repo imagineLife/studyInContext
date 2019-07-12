@@ -1,7 +1,7 @@
 import React from 'react';
 import { login } from '../../api/';
 import './index.css';
-import { UserContext } from '../../UserContextHooks'
+import { UserContext } from '../../ContextHooks/User'
 
 function LoginPage(){
 
