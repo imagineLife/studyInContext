@@ -5,7 +5,7 @@ const Header = () => {
 
 
 	return(
-	  <header className="Header">
+	  <header className="header">
 	    <h2>MyMail</h2>
 	    <UserMenu/>
 	  </header>

@@ -26,7 +26,7 @@ function UserMenu(){
   return (
     <div className="userMenu">
       <img
-        className="userAvatar"
+        className="user-avatar"
         alt="User avatar"
         src={avatar}
         onClick={() => toggleMenu()}

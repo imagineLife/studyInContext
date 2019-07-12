@@ -4,7 +4,7 @@ import MessageList from '../MessageList/Hooks';
 
 const MainPage = ({ currentUser }) => {
 	return(
-	  <main className="myMain">
+	  <main>
 	    <Header />
 	    <MessageList currentUser={currentUser} />
 	  </main>
