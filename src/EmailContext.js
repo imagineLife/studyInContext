@@ -34,9 +34,9 @@ class EmailProvider extends React.Component {
             emails: state.emails.concat(emails)
           }));
           // notify!
-          // this.props.notify(
-          //   `${emails.length} more emails arrived`
-          // );
+          this.props.notify(
+            `${emails.length} more emails arrived`
+          );
         }
       });
     }

@@ -20,11 +20,14 @@ export default class Root extends React.Component {
   render() {
     console.log('made it here :) ')
     
+    //if logged-in, state knows about current user
     return this.state.currentUser ? (
       <MainPage
         currentUser={this.state.currentUser}
         onLogout={this.handleLogout}
       />
+
+    //if not logged-in
     ) : (
       <LoginPage onLogin={this.handleLogin} />
     );

@@ -5,7 +5,7 @@ import MainPage from './ContextComponents/MainPage';
 import './main.css';
 import {UserProvider, UserConsumer} from './UserContext'
 import { EmailProvider } from './EmailContext'
-import { NotificationProvider } from './NotificationContext'
+import { NotificationProvider } from '../NotificationContext'
 export default function Root(){
   return (
     

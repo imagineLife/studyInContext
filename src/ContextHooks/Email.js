@@ -27,7 +27,7 @@ const EmailProvider = (props) => {
 	}, [])
 
 	const selectThisEmail = email => setCurrentEmail(email)
-
+	
 	return(<Provider value={{
 		emails, 
 		currentEmail, 

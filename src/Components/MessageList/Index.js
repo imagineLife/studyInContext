@@ -1,20 +1,12 @@
 import React from 'react';
-import { UserConsumer } from '../../UserContext'
-import { EmailConsumer } from '../../EmailContext'
+import './index.css'
 
-
-const MessageList = () => (
-  <UserContext>
-  	{ ({user}) => (
-  		<EmailConsumer>
-			<div className="MessageList">
-				<div className="no-messages">
-					Your mailbox is empty, {user.firstName}! 🎉
-				</div>
-			</div>
-		</EmailConsumer>
-  	)}
-  </UserContext>
+const MessageList = ({ currentUser }) => (
+  <div className="MmssageList">
+    <div className="no-messages">
+      Your mailbox is empty, {currentUser.firstName}! 🎉
+    </div>
+  </div>
 );
 
 export default MessageList;
