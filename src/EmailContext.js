@@ -23,7 +23,7 @@ class EmailProvider extends React.Component {
       );
 
     //refresh emails
-    this.refreshInterval = setInterval(this.refresh, 5000)
+    // this.refreshInterval = setInterval(this.refresh, 5000)
   }
 
   refresh = () => {
@@ -43,6 +43,9 @@ class EmailProvider extends React.Component {
   };
 
   handleSelectEmail = email => {
+    console.log('email here')
+    console.log(email)
+    
     this.setState({ currentEmail: email });
   };
 
@@ -63,6 +66,7 @@ class EmailProvider extends React.Component {
 let WrappedEmail = withNotifier(EmailProvider)
 
 export { 
-  WrappedEmail as EmailProvider, 
-  Consumer as EmailConsumer 
+  WrappedEmail as WrappedEmailProvider, 
+  Consumer as EmailConsumer,
+  EmailProvider
 };

@@ -4,27 +4,12 @@ import LoginPage from '../Components/LoginPage/v2';
 import MainPage from '../Components/MainPage/v2';
 import '../main.css';
 import { UserProvider, UserConsumer } from '../UserContext'
+import { EmailProvider, EmailConsumer } from '../EmailContext'
 
-export default class Root extends React.Component {
-  state = {
-    currentUser: null
-  };
-
-  handleLogin = user => {
-    console.log('HERE!!');
-    this.setState({ currentUser: user });
-  };
-
-  handleLogout = () => {
-    this.setState({ currentUser: null });
-  };
-
-  render() {
-    console.log('WithContext App Render');
+function Root(){
+  console.log('WithContext App Render');
     
-    //if logged-in, state knows about current user
     return (
-      <UserProvider>
         <UserConsumer>
         {({currentUser}) => (
           currentUser ? (   
@@ -34,9 +19,16 @@ export default class Root extends React.Component {
           )
         )}
         </UserConsumer>
-      </UserProvider>
     );
-  }
 }
 
-ReactDOM.render(<Root />, document.getElementById('app'));
+const ProvidedRoot = () => {
+  return(
+    <UserProvider>
+      <EmailProvider>
+        <Root />
+      </EmailProvider>
+    </UserProvider> 
+  )
+}
+ReactDOM.render(<ProvidedRoot />, document.getElementById('app'));
