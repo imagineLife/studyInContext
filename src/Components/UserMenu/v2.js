@@ -33,7 +33,7 @@ class UserMenu extends React.Component {
   render() {
     return (
       <UserConsumer>
-      {({currentUser}) => (
+      {({currentUser, handleLogout}) => (
         <div className="userMenu">
           <img
             className="userAvatar"
@@ -44,7 +44,7 @@ class UserMenu extends React.Component {
           />
           {this.state.menuVisible && (
             <ul>
-              <li onClick={this.props.onLogout}>Logout</li>
+              <li onClick={handleLogout}>Logout</li>
             </ul>
           )}
         </div>

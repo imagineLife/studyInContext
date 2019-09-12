@@ -22,9 +22,9 @@ class UserProvider extends React.Component{
 		return(
 			<Provider
 				value={{
-		          user: this.state.currentUser,
-		          onLogin: this.handleLogin,
-		          onLogout: this.handleLogout
+		          currentUser: this.state.currentUser,
+		          handleLogin: this.handleLogin,
+		          handleLogout: this.handleLogout
 		        }}>
 				{this.props.children}
 			</Provider>
