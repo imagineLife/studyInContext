@@ -33,7 +33,7 @@ class UserMenu extends React.Component {
   render() {
     return (
       <UserConsumer>
-      {(currentUser) => (
+      {({currentUser}) => (
         <div className="userMenu">
           <img
             className="userAvatar"
