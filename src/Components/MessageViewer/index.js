@@ -3,10 +3,7 @@ import {EmailConsumer} from '../../EmailContext'
 
 const MessageViewer = () => (
 	<EmailConsumer>
-		{({currentEmail}) => {
-			console.log('currentEmail')
-			console.log(currentEmail)
-			
+		{({currentEmail, onSelectEmail}) => {
 			return(
 				<div className="messageViewer">
 					<button onClick={() => onSelectEmail(null)}>
