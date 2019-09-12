@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import LoginPage from '../Components/LoginPage';
-import MainPage from '../Components/MainPage';
+import MainPage from '../Components/MainPage/v2';
 import '../main.css';
+import { UserContext } from '../UserContext'
 
 export default class Root extends React.Component {
   state = {
@@ -18,17 +19,18 @@ export default class Root extends React.Component {
   };
 
   render() {
-    console.log('made it here :) ')
+    console.log('WithContext App Render');
     
     //if logged-in, state knows about current user
     return this.state.currentUser ? (
-      <MainPage
-        currentUser={this.state.currentUser}
-        onLogout={this.handleLogout}
-      />
+      <UserContext.Provider value={this.state.currentUser}>
+        <MainPage
+          onLogout={this.handleLogout}
+        />
+      </UserContext.Provider>
 
-    //if not logged-in
-    ) : (
+      //if not logged-in
+      ) : (
       <LoginPage onLogin={this.handleLogin} />
     );
   }
