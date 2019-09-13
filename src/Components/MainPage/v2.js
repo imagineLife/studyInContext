@@ -3,6 +3,7 @@ import Header from '../Header/v2';
 import MessageList from '../MessageList/v2';
 import MessageViewer from '../MessageViewer/';
 import { EmailConsumer } from '../../EmailContext'
+// import { NotificationProvider } from '../NotificationContext'
 
 const MainPage = () => (
 	<EmailConsumer>

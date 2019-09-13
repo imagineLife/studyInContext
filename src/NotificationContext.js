@@ -1,4 +1,5 @@
 import React from 'react'
+import './notification.css'
 
 const {Provider, Consumer} = React.createContext()
 
@@ -12,9 +13,9 @@ class NotificationProvider extends React.Component{
 			messages: [
 			  ...prevState.messages,
 			  {
-				id: Math.random(),
-				text,
-				addedAt: new Date().getTime()
+					id: Math.random(),
+					text,
+					addedAt: new Date().getTime()
 			  }
 			]
 		}))
@@ -41,6 +42,7 @@ class NotificationProvider extends React.Component{
 		 				  onClose={() => this.removeMessage(m)} />
 		 			))}
 		 		</ul>
+		 		{this.props.children}
 		 	</div>
 		 </Provider>
 		)

@@ -5,6 +5,7 @@ import MainPage from '../Components/MainPage/v2';
 import '../main.css';
 import { UserProvider, UserConsumer } from '../UserContext'
 import { EmailProvider, EmailConsumer } from '../EmailContext'
+import { NotificationProvider } from '../NotificationContext'
 
 function Root(){
   console.log('WithContext App Render');
@@ -24,11 +25,13 @@ function Root(){
 
 const ProvidedRoot = () => {
   return(
-    <UserProvider>
-      <EmailProvider>
-        <Root />
-      </EmailProvider>
-    </UserProvider> 
+    <NotificationProvider>
+      <UserProvider>
+        <EmailProvider>
+          <Root />
+        </EmailProvider>
+      </UserProvider> 
+    </NotificationProvider>
   )
 }
 ReactDOM.render(<ProvidedRoot />, document.getElementById('app'));
